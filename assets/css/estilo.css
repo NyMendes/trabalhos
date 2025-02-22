@@ -1,0 +1,211 @@
+/* */
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+  :root{
+    --font-01:  'Montserrat', sans-serif;
+    --font-02: 'Poppins', sans-serif;
+    --font-03:  'Roboto', sans-serif;
+    --blue01: #207FE0;
+    --blue02: #1A6CBD;
+    --black02: #1f1f1f;
+    --white01:white;
+    --white02:#f0f0f0;
+  }
+*{
+    /*tamanho da caixa leva em consideracao o 
+    padding e border, menos margin */
+    font-family: var(--font-03);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    /*viewport (tamanho do nosso dispositivo)*/
+    height: 100vh;
+    /*divide a tela em linhas e colunas */
+    display: grid;
+    /*definindo tamanho das linhas fr(fragmento)*/
+    grid-template-rows: 120px 1fr 60px;
+    /*definindo tamanho das linhas*/
+    grid-template-columns: 1fr;
+    /*define qual área cada div irá ocupar*/
+    grid-template-areas: 
+    "cabecalho"
+    "principal"
+    "rodape";
+
+}
+.menu{
+    background: var(--blue02);
+    width: 100%;
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 0 2rem ;
+}
+.menu > ul{
+    height: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin: 0;
+}
+.menu ul > li {
+    height: 100%;
+    padding:  0.5rem 2rem;
+    cursor: pointer;
+}
+.menu ul li > a{
+    height: 100%;
+    color: var(--white02);
+    text-decoration: none;
+}
+.menu ul li:hover {
+    background-color: var(--blue01);
+}
+.menu > h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0;
+}
+.cabecalho{
+    /*vinculando a classe cabecalho
+    a parte cabecalho do grid(apontando)*/
+    grid-area: cabecalho;
+    background-color: var(--blue01);
+    color: var(--white01);
+    display: flex;
+    flex-direction: column;
+    /*eixo principal*/
+    justify-content:space-between;
+    /*eixo secundário*/
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0px 6px 9px 3px rgba(0, 0, 0, 0.15);
+}
+.cabecalho > div {
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+.cabecalho div > h1{
+    margin: auto;
+    font-weight: 300;
+    font-size: 2.8rem;
+}
+
+.principal{
+    grid-area: principal;
+    height: calc(100vh - 180px);
+    background-color:#e8e6e6f8;
+    padding: 20px;
+      
+}
+.conteudo{
+    /*mover elementos em relação a posição
+    original*/
+    position: relative;
+    height: 100%;
+    background-color:transparent;
+    /*scroll para os elementos q excederem*/
+    overflow-y: scroll;
+    padding: 20px;
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.2);
+
+}
+
+
+.rodape{
+    grid-area: rodape;
+    background-color: #fff;
+    display: flex;
+    /*eixo principal*/
+    justify-content: flex-end;
+    /*eixo principal*/
+    align-items: center;
+    font-size: 1.2rem;
+    padding-right: 20px;
+    color: #444;
+
+
+}
+.aulas{
+    display: flex;
+    /* Quebrar linha */
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+.aula{
+    flex-basis: 30%;
+    margin: 1rem;
+    border-radius: 14px;
+    overflow: hidden;
+    background-color: #fff;
+
+}
+.aula > h3{
+    margin: 0px;
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+}
+.aula > ul{
+    margin: 0;
+    list-style: none;
+}
+.aula > ul > li{
+    line-height: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.aula > ul > li > a{
+    padding-left: 20px;
+    text-decoration: none;
+    color: #222;
+    display: flex;
+}
+.aula > ul > li:hover > a{
+    background-color: #eeee;
+}
+.aulas{
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+.card-img{
+    width: 100%;
+    height: 15rem;
+    background: #1f1f1f;
+}
+.card-img img{
+    width: 100%;
+    height: 100%;
+}
+.card-img:hover img{
+    opacity: 0.75;
+}
+.aula.verde > h3{
+   background-color: #4caf50;
+}
+
+.aula.vermelho >h3{
+    background-color: #f44336;
+}
+.aula.azul >h3{
+    background-color: #1867c0;
+}
+.aula.roxo>h3{ 
+    background-color: #6843E0;
+}
+.aula.laranja>h3{ 
+    background-color: #E06900;
+}
+.aula.verdeEscuro > h3{ 
+    background-color: #3B8B40;
+}
